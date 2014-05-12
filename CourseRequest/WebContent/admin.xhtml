@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/template/BasicTemplate.xhtml">
+    <ui:define name="content">
+        <h:form>
+        <h:outputText value="SQL connection information"></h:outputText>
+        <h:panelGrid columns="2" style="width: 325px; ">
+        	<h:outputText value="Port"></h:outputText>
+        	<h:inputText value="#{adminBean.port}"></h:inputText>
+        	
+     		<h:outputText value="Username"></h:outputText>
+     		<h:inputText value="#{adminBean.user}"></h:inputText>
+ 		
+ 			<h:outputText value="Password"></h:outputText>
+ 			<h:inputText value="#{adminBean.pass}"></h:inputText>
+ 		</h:panelGrid> 
+ 	
+           	<h:commandButton value="Build" action="#{adminBean.build}"></h:commandButton>
+         	<h:panelGrid columns="1" style="width: 325px; ">
+         	<h:outputText value="#{adminBean.port}"></h:outputText>
+         	<h:outputText value="#{adminBean.user}"></h:outputText>
+         	<h:outputText value="#{adminBean.pass}"></h:outputText>
+         	</h:panelGrid>
+         <h:commandLink value="home"></h:commandLink>
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>

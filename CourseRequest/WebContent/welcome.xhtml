@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/template/BasicTemplate.xhtml">
+    <ui:define name="content">
+        <h:outputLabel value="#{requestBean.build()}"></h:outputLabel>
+        <h:panelGrid columns="1" style="width: 325px; ">
+               
+                <h:panelGrid columns="2" style="width: 295px; ">
+                <h:outputText value="#{requestBean.instructorname}"></h:outputText>
+                <h:outputText value="#{requestBean.instructorid}"></h:outputText>
+                <h:outputText value="#{requestBean.course1}" ></h:outputText>
+              	<h:outputText value="#{requestBean.time1}"></h:outputText>
+                <h:outputText value="#{requestBean.course2}" ></h:outputText>
+              	<h:outputText value="#{requestBean.time2}"></h:outputText>
+                <h:outputText value="#{requestBean.course3}"></h:outputText>
+              	<h:outputText value="#{requestBean.time3}"></h:outputText>
+       			<h:outputText value="#{requestBean.course4}"></h:outputText>
+              	<h:outputText value="#{requestBean.time4}"></h:outputText>
+              	</h:panelGrid>
+              	
+        </h:panelGrid>
+    </ui:define>
+</ui:composition>
+</html>

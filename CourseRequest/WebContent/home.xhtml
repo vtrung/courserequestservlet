@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/template/BasicTemplate.xhtml">
+    <ui:define name="content">
+        <h:form>
+            <h:panelGrid columns="2" style="width: 295px; ">
+            
+                <h:outputText style="width:125px" value="Instructor Name"></h:outputText>
+                <h:inputText value="#{requestBean.instructorname}"></h:inputText>
+                
+                <h:outputText style="width:125px" value="Instructor ID"></h:outputText>
+                <h:inputText value="#{requestBean.instructorid}"></h:inputText>
+                
+               	<h:outputText style="width:125px" value="Status"></h:outputText>
+                <h:selectOneMenu value="#{requestBean.fulltime}" style="width: 156px; ">	
+                <f:selectItem itemValue="FullTime"></f:selectItem>
+                <f:selectItem itemValue="Adjunct"></f:selectItem>
+                </h:selectOneMenu>
+                
+            </h:panelGrid>
+            
+            <h:panelGrid columns="4" style="width:608px;margin-top:20px;
+            	border-style:solid;
+            	border-color:gray;
+            	">
+            <h:outputText style="width:125px;font-weight:bold" value="Request"></h:outputText>
+            <h:outputText style="width:125px;font-weight:bold" value="Course"></h:outputText>
+            <h:outputText style="width:125px;font-weight:bold" value="Time Block"></h:outputText>
+            <h:outputText style="width:125px;font-weight:bold" value="Notes"></h:outputText>
+             <h:outputText style="width:125px" value="First Course"></h:outputText>
+                <h:selectOneMenu value="#{requestBean.course1}" style="width: 156px; ">
+          			<f:selectItems value="#{courseListBean.list}" />
+                </h:selectOneMenu>
+              
+                <h:selectOneMenu value="#{requestBean.time1}" style="width: 156px; ">
+          			<f:selectItems value="#{timeListBean.time}" />
+                </h:selectOneMenu>
+                <h:inputText value="#{requestBean.note1}"></h:inputText>
+                
+                <h:outputText style="width:125px" value="Second Course"></h:outputText>
+                <h:selectOneMenu value="#{requestBean.course2}" style="width: 156px; ">
+          			<f:selectItem itemValue="none"></f:selectItem>
+          			<f:selectItems value="#{courseListBean.list}" />
+                </h:selectOneMenu>
+              
+                <h:selectOneMenu value="#{requestBean.time2}" style="width: 156px; ">
+          			<f:selectItems value="#{timeListBean.time}" />
+                </h:selectOneMenu>
+                <h:inputText value="#{requestBean.note2}"></h:inputText>
+                
+                <h:outputText style="width:125px" value="Third Course"></h:outputText>
+                <h:selectOneMenu value="#{requestBean.course3}" style="width: 156px; ">
+          			<f:selectItem itemValue="none"></f:selectItem>
+          			<f:selectItems value="#{courseListBean.list}" />
+                </h:selectOneMenu>
+              
+                <h:selectOneMenu value="#{requestBean.time3}" style="width: 156px; ">
+          			<f:selectItems value="#{timeListBean.time}" />
+                </h:selectOneMenu>
+                <h:inputText value="#{requestBean.note3}"></h:inputText>
+                
+                <h:outputText style="width:125px" value="Fourth Course"></h:outputText>
+                <h:selectOneMenu value="#{requestBean.course4}" style="width: 156px; ">
+          			<f:selectItem itemValue="none"></f:selectItem>
+          			<f:selectItems value="#{courseListBean.list}" />
+                </h:selectOneMenu>
+              
+                <h:selectOneMenu value="#{requestBean.time4}" style="width: 156px; ">
+          			<f:selectItems value="#{timeListBean.time}" />
+                </h:selectOneMenu>
+                <h:inputText value="#{requestBean.note4}"></h:inputText>
+            </h:panelGrid>
+            <h:commandButton value="Submit" action="submit"></h:commandButton>
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>

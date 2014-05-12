@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+    version="2.0">
+	<managed-bean>
+		<managed-bean-name>loginBean</managed-bean-name>
+		<managed-bean-class>com.request.LoginBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<description>Store the request information from form</description>
+		<managed-bean-name>requestBean</managed-bean-name>
+		<managed-bean-class>com.request.RequestBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>courseListBean</managed-bean-name>
+		<managed-bean-class>com.request.CourseListBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>dataConnect</managed-bean-name>
+		<managed-bean-class>com.admin.DataConnect</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>timeListBean</managed-bean-name>
+		<managed-bean-class>com.request.TimeListBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<description>build initial database</description>
+		<managed-bean-name>buildSQL</managed-bean-name>
+		<managed-bean-class>com.admin.BuildSQL</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>xMLwriter</managed-bean-name>
+		<managed-bean-class>com.admin.XMLwriter</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>adminBean</managed-bean-name>
+		<managed-bean-class>com.admin.AdminBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>requestListBean</managed-bean-name>
+		<managed-bean-class>com.request.RequestListBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>activeListBean</managed-bean-name>
+		<managed-bean-class>com.request.ActiveListBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<navigation-rule>
+		<display-name>admin.xhtml</display-name>
+		<from-view-id>/admin.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{adminBean.build}</from-action>
+			<to-view-id>/admin.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>home.xhtml</display-name>
+		<from-view-id>/home.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>submit</from-outcome>
+			<to-view-id>/welcome.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>welcome.xhtml</display-name>
+		<from-view-id>/welcome.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>confirm</from-outcome>
+			<to-view-id>/submit.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+</faces-config>

@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<ui:composition template="/WEB-INF/template/BasicTemplate.xhtml">
+    <ui:define name="content">
+        <h:outputLabel style="font-size:250%;margin:50px" value="Process Request"></h:outputLabel>
+		<div>
+        <table  style="font-size:small;width:42%;height:100px;border:solid;
+        background-color:white;float:left;margin-left:20px">
+        	<ui:repeat value="#{requestListBean.stringList}" var="list">
+        	<tr>
+        	<td><h:outputText value="#{list}" /></td>
+        	<td><h:button value="add">
+        		<f:param name="action" value="#{activeListBean.addList()}" />
+        		</h:button></td>
+        	</tr>
+        	</ui:repeat>
+        </table>
+    
+   	</div>
+    </ui:define>
+</ui:composition>
+</html>
